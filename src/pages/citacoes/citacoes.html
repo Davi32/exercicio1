@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{grupoCitacoes.categoria}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-card *ngFor="let citacao of grupoCitacoes.citacoes; let i = index">
+		<ion-card-header>
+			#{{i+1}}
+		</ion-card-header>
+
+		<ion-card-content>
+			<p>{{citacao.texto}}</p>
+			<p class="autor">{{citacao.autor}}</p>
+
+			<ion-row>
+				<ion-col text-right>
+					<button ion-button clear small (click)="adicionarAosFavoritos(citacao)"*ngIf="!isFavorita(citacao)">Favoritar</button>
+					<button ion-button clear small color="danger" (click)="removerDosFavoritos(citacao)"*ngIf="isFavorita(citacao)">Desfavoritar</button>
+				</ion-col>
+			</ion-row>
+		</ion-card-content>
+	</ion-card>
+</ion-content>

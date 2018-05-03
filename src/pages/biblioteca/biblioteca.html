@@ -1,0 +1,21 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Biblioteca de Citações</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<h3>Escolha sua citação favorita</h3>
+	<ion-list>
+		<button ion-item *ngFor="let grupoCitacoes of citacoesCollection"
+			[navPush]="citacoesPage"
+			[navParams]="grupoCitacoes">
+			<ion-icon [name]="grupoCitacoes.icone" item-left></ion-icon>
+			<h2>{{grupoCitacoes.categoria | uppercase}}</h2>
+			<p>{{grupoCitacoes.citacoes.length}} citações</p>
+		</button>
+	</ion-list>	
+</ion-content>

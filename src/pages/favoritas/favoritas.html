@@ -1,0 +1,18 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Citações Favoritas</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-list>
+		<ion-item *ngFor="let citacao of citacoes" (click)="exibirCitacao(citacao)">
+			<h2>{{citacao.autor}}</h2>
+			<p>{{citacao.texto}}</p>
+		</ion-item>
+	</ion-list>
+
+</ion-content>
